@@ -1,0 +1,12 @@
+services:
+  db:
+    image: postgres:16.3
+    restart: always
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: user
+    container_name: someonepsql
+    volumes:
+      - .postgres-db:/var/lib/postgresql/data
